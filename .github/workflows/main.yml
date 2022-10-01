@@ -21,7 +21,6 @@ env:
   GKE_CLUSTER: khisoft    # Add your cluster name here.
   GKE_ZONE: asia-southeast1	   # Add your cluster zone here.
   DEPLOYMENT_NAME: staging # Add your deployment name here.
-  IMAGE: static-site
 
 jobs:
   setup-build-publish-deploy:
