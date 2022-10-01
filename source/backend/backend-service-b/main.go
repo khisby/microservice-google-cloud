@@ -4,12 +4,18 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 )
 
 func homePage(w http.ResponseWriter, r *http.Request) {
-	serviceName := "backend service b"
-	log.Println(fmt.Sprintf("Endpoint Hit %s", serviceName))
-	w.Write([]byte(fmt.Sprintf("Welcome to %s!", serviceName)))
+	serviceName := "backend service a"
+	hostName, err := os.Hostname()
+	if err != nil {
+		panic(err)
+	}
+	log.Println(fmt.Sprintf("Endpoint Hit %s at %s", serviceName, hostName))
+	w.Write([]byte(fmt.Sprintf("Welcome to %s at %s", serviceName, hostName)))
+
 }
 
 func handleRequest() {

@@ -28,7 +28,6 @@ do
           docker push "$tag"
           echo "================= Push Done ================="
 
-
           # deployment
           kubectl apply -f deployment.yaml
           kubectl rollout status deployment/"$app_name"
