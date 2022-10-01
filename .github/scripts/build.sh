@@ -18,7 +18,7 @@ do
           cp -r ../../../.github/assets/* .
 
           # create deployment.yaml
-          sed -e "s/{APP_NAME}/$app_name/g" -e "s/\{TAG}/$TAG/g" deployment.yaml.template > deployment.yaml
+          sed -e "s/{APP_NAME}/$app_name/g" -e "s/{TAG}/$TAG/g" deployment.yaml.template > deployment.yaml
 
           # build the app
           docker build --tag "$tag" --build-arg GITHUB_SHA="$GITHUB_SHA" --build-arg GITHUB_REF="$GITHUB_REF" .
