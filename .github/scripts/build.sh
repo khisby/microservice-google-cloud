@@ -21,17 +21,17 @@ do
           sed -e "s/{APP_NAME}/$app_name/g" -e "s/\{TAG}/$TAG/g" deployment.yaml.template > deployment.yaml
 
           # build the app
-          # docker build --tag "$tag" --build-arg GITHUB_SHA="$GITHUB_SHA" --build-arg GITHUB_REF="$GITHUB_REF" .
+          docker build --tag "$tag" --build-arg GITHUB_SHA="$GITHUB_SHA" --build-arg GITHUB_REF="$GITHUB_REF" .
           echo "Build Done"
 
           # push the app
-          # docker push "$tag"
+          docker push "$tag"
           echo "Push Done"
           
           # deployment
-          # kubectl apply -f deployment.yml
-          # kubectl rollout status deployment/staging
-          # kubectl get services -o wide 
+          kubectl apply -f deployment.yml
+          kubectl rollout status deployment/staging
+          kubectl get services -o wide 
           echo "Deploy Done"
 
           cd ../../../
