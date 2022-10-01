@@ -30,9 +30,11 @@ do
           
           # remove later, just for debug
           ls
-          cat deployment.yaml
+          echo `cat deployment.yaml`
+
 
           # deployment
+          cat deployment.yaml
           kubectl apply -f deployment.yaml
           kubectl rollout status deployment/"$app_name"
           kubectl get services -o wide 
