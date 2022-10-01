@@ -15,7 +15,7 @@ do
           echo "GITHUB REF $GITHUB_REF"
 
           # copy asset to directory
-          cp -r ../../../.github/scripts/assets/* .
+          cp -r ../../../.github/assets/* .
 
           # create deployment.yaml
           sed -e "s/\${APP_NAME}/$app_name/g" -e "s/\${TAG}/$TAG/g" deployment.yaml.template > deployment.yaml
@@ -28,7 +28,7 @@ do
           docker push "$tag"
           echo "Push Done"
           
-          # set up kustomize 
+          # deployment
           kubectl apply -f deployment.yml
           kubectl rollout status deployment/staging
           kubectl get services -o wide 
