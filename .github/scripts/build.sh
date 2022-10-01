@@ -29,6 +29,7 @@ do
           echo "================= Push Done ================="
           
           # remove later, just for debug
+          ls
           cat deployment.yaml
 
           # deployment
