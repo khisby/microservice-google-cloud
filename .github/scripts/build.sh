@@ -29,7 +29,7 @@ do
           echo "Push Done"
           
           # deployment
-          kubectl apply -f deployment.yml
+          kubectl apply -f deployment.yaml
           kubectl rollout status deployment/staging
           kubectl get services -o wide 
           echo "Deploy Done"
