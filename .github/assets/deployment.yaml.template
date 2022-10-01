@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: {APP_NAME}
-        image: {TAG}
+        image: gcr.io/{PROJECT_ID}/{APP_NAME}:{GITHUB_SHA}
         ports:
         - containerPort: 80
         resources:
