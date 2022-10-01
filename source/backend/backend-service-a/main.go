@@ -10,6 +10,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 	serviceName := "backend service a"
 	log.Println(fmt.Sprintf("Endpoint Hit %s", serviceName))
 	w.Write([]byte(fmt.Sprintf("Welcome to %s!", serviceName)))
+
 }
 
 func handleRequest() {
