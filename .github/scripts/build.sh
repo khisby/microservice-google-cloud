@@ -30,6 +30,7 @@ do
           
           # deployment
           ls
+          cat deployment.yaml
           kubectl apply -f deployment.yaml
           kubectl rollout status deployment/staging
           kubectl get services -o wide 
